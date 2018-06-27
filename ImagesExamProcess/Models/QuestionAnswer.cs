@@ -3,7 +3,7 @@
     public class QuestionAnswer
     {
         public int Question { get; set; }
-        public int Answer { get; set; }
+        public char Answer { get; set; }
         public int[] Score { get; set; }
     }
 }
