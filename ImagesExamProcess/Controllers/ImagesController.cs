@@ -123,7 +123,6 @@ namespace ImagesExamProcess.Controllers
                 var index = processingResult.Feedback.IndexOf(item);
                 processingResult.Feedback[index].Question = index + 1;
                 processingResult.Feedback[index].Answer = alpha[Array.IndexOf(item.Score, item.Score.Min())];
-                processingResult.Feedback[index].Score = null;
             }
 
             return processingResult;
