@@ -7,6 +7,7 @@ namespace ImagesExamProcess.Services
 {
     public class ImageService
     {
+        double fatorX = 1.75;
         public ProcessingResult ProcessENEMAnswerKey(ImageModel imageModel, ProcessingResult processingResult)
         {
             byte[] imageBytes = Convert.FromBase64String(imageModel.ImageBase64);
@@ -27,9 +28,9 @@ namespace ImagesExamProcess.Services
             }
 
             //Bitmap newBmp = bmp;
-            for (int x = 44; x < 146/*bmp.Width*/; x++)
+            for (int x = (int)(44 * fatorX); x < (int)(146 * fatorX)/*bmp.Width*/; x++)
             {
-                for (int y = 30; y < 479/*bmp.Height*/; y++)
+                for (int y = (int)(30 *fatorX); y < (int)(479 * fatorX)/*bmp.Height*/; y++)
                 {
                     Color pixelColor = bmp.GetPixel(x, y);
                     int avg = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
@@ -43,9 +44,9 @@ namespace ImagesExamProcess.Services
                 }
             }
 
-            for (int x = 194; x < 296/*bmp.Width*/; x++)
+            for (int x = (int)(194 * fatorX); x < (int)(296 * fatorX)/*bmp.Width*/; x++)
             {
-                for (int y = 30; y < 479/*bmp.Height*/; y++)
+                for (int y = (int)(30 * fatorX); y < (int)(479 * fatorX)/*bmp.Height*/; y++)
                 {
                     Color pixelColor = bmp.GetPixel(x, y);
                     int avg = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
@@ -59,9 +60,9 @@ namespace ImagesExamProcess.Services
                 }
             }
 
-            for (int x = 343; x < 445/*bmp.Width*/; x++)
+            for (int x = (int)(343 * fatorX); x < (int)(445 * fatorX)/*bmp.Width*/; x++)
             {
-                for (int y = 30; y < 479/*bmp.Height*/; y++)
+                for (int y = (int)(30 * fatorX); y < (int)(479 * fatorX)/*bmp.Height*/; y++)
                 {
                     Color pixelColor = bmp.GetPixel(x, y);
                     int avg = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
@@ -75,9 +76,9 @@ namespace ImagesExamProcess.Services
                 }
             }
 
-            for (int x = 493; x < 595/*bmp.Width*/; x++)
+            for (int x = (int)(493 * fatorX); x < (int)(595 * fatorX)/*bmp.Width*/; x++)
             {
-                for (int y = 30; y < 479/*bmp.Height*/; y++)
+                for (int y = (int)(30 * fatorX); y < (int)(479 *fatorX)/*bmp.Height*/; y++)
                 {
                     Color pixelColor = bmp.GetPixel(x, y);
                     int avg = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
@@ -91,9 +92,9 @@ namespace ImagesExamProcess.Services
                 }
             }
 
-            for (int x = 642; x < 774/*bmp.Width*/; x++)
+            for (int x = (int)(642 * fatorX); x < (int)(774 * fatorX)/*bmp.Width*/; x++)
             {
-                for (int y = 30; y < 479/*bmp.Height*/; y++)
+                for (int y = (int)(30 * fatorX); y < (int)(479 * fatorX)/*bmp.Height*/; y++)
                 {
                     Color pixelColor = bmp.GetPixel(x, y);
                     int avg = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
@@ -111,100 +112,100 @@ namespace ImagesExamProcess.Services
 
         private int CheckInnerColumn(int x)
         {
-            if (x <= 59)
+            if (x <= (int)( fatorX * 59))
                 return 0;
-            else if (x >= 66 && x <= 81)
+            else if (x >= (int) ( 66 * fatorX ) && x <=  (int)( fatorX * 81))
                 return 1;
-            else if (x >= 88 && x <= 103)
+            else if (x >= (int) ( 88 * fatorX ) && x <=  (int)( fatorX * 103))
                 return 2;
-            else if (x >= 109 && x <= 124)
+            else if (x >= (int) ( 109 * fatorX ) && x <=  (int)( fatorX * 124))
                 return 3;
-            else if (x >= 131 && x <= 146)
+            else if (x >= (int) ( 131 * fatorX ) && x <=  (int)( fatorX * 146))
                 return 4;
 
-            if (x >= 194 && x <= 209)
+            if (x >= (int) ( 194 * fatorX ) && x <=  (int)( fatorX * 209))
                 return 0;
-            else if (x >= 216 && x <= 230)
+            else if (x >= (int) ( 216 * fatorX ) && x <=  (int)( fatorX * 230))
                 return 1;
-            else if (x >= 237 && x <= 252)
+            else if (x >= (int) ( 237 * fatorX ) && x <=  (int)( fatorX * 252))
                 return 2;
-            else if (x >= 259 && x <= 274)
+            else if (x >= (int) ( 259 * fatorX ) && x <=  (int)( fatorX * 274))
                 return 3;
-            else if (x >= 281 && x <= 296)
+            else if (x >= (int) ( 281 * fatorX ) && x <=  (int)( fatorX * 296))
                 return 4;
 
-            if (x >= 343 && x <= 358)
+            if (x >= (int) ( 343 * fatorX ) && x <=  (int)( fatorX * 358))
                 return 0;
-            else if (x >= 365 && x <= 380)
+            else if (x >= (int) ( 365 * fatorX ) && x <=  (int)( fatorX * 380))
                 return 1;
-            else if (x >= 387 && x <= 402)
+            else if (x >= (int) ( 387 * fatorX ) && x <=  (int)( fatorX * 402))
                 return 2;
-            else if (x >= 409 && x <= 424)
+            else if (x >= (int) ( 409 * fatorX ) && x <=  (int)( fatorX * 424))
                 return 3;
-            else if (x >= 431 && x <= 446)
+            else if (x >= (int) ( 431 * fatorX ) && x <=  (int)( fatorX * 446))
                 return 4;
 
-            if (x >= 493 && x <= 508)
+            if (x >= (int) ( 493 * fatorX ) && x <=  (int)( fatorX * 508))
                 return 0;
-            else if (x >= 515 && x <= 530)
+            else if (x >= (int) ( 515 * fatorX ) && x <=  (int)( fatorX * 530))
                 return 1;
-            else if (x >= 537 && x <= 552)
+            else if (x >= (int) ( 537 * fatorX ) && x <=  (int)( fatorX * 552))
                 return 2;
-            else if (x >= 559 && x <= 574)
+            else if (x >= (int) ( 559 * fatorX ) && x <=  (int)( fatorX * 574))
                 return 3;
-            else if (x >= 581 && x <= 596)
+            else if (x >= (int) ( 581 * fatorX ) && x <=  (int)( fatorX * 596))
                 return 4;
 
-            if (x >= 643 && x <= 657)
+            if (x >= (int) ( 643 * fatorX ) && x <=  (int)( fatorX * 657))
                 return 0;
-            else if (x >= 665 && x <= 679)
+            else if (x >= (int) ( 665 * fatorX ) && x <=  (int)( fatorX * 679))
                 return 1;
-            else if (x >= 687 && x <= 701)
+            else if (x >= (int) ( 687 * fatorX ) && x <=  (int)( fatorX * 701))
                 return 2;
-            else if (x >= 709 && x <= 723)
+            else if (x >= (int) ( 709 * fatorX ) && x <=  (int)( fatorX * 723))
                 return 3;
-            else if (x >= 731 && x <= 745)
+            else if (x >= (int) ( 731 * fatorX ) && x <=  (int)( fatorX * 745))
                 return 4;
 
             return -1;
         }
         private int CheckLine(int y)
         {
-            if (y >= 30 && y <= 45)
+            if (y >= (int) ( 30 * fatorX ) && y <=  (int)( 45 * fatorX))
                 return 0;
-            else if (y >= 56 && y <= 71)
+            else if (y >= (int) ( 56 * fatorX ) && y <=  (int)( 71 * fatorX))
                 return 1;
-            else if (y >= 81 && y <= 96)
+            else if (y >= (int) ( 81 * fatorX ) && y <=  (int)( 96 * fatorX))
                 return 2;
-            else if (y >= 107 && y <= 122)
+            else if (y >= (int) ( 107 * fatorX ) && y <=  (int)( 122 * fatorX))
                 return 3;
-            else if (y >= 132 && y <= 147)
+            else if (y >= (int) ( 132 * fatorX ) && y <=  (int)( fatorX * 147))
                 return 4;
-            else if (y >= 158 && y <= 173)
+            else if (y >= (int) ( 158 * fatorX ) && y <=  (int)( fatorX * 173))
                 return 5;
-            else if (y >= 183 && y <= 198)
+            else if (y >= (int) ( 183 * fatorX ) && y <=  (int)( fatorX * 198))
                 return 6;
-            else if (y >= 209 && y <= 224)
+            else if (y >= (int) ( 209 * fatorX ) && y <=  (int)( fatorX * 224))
                 return 7;
-            else if (y >= 234 && y <= 249)
+            else if (y >= (int) ( 234 * fatorX ) && y <=  (int)( fatorX * 249))
                 return 8;
-            else if (y >= 260 && y <= 275)
+            else if (y >= (int) ( 260 * fatorX ) && y <=  (int)( fatorX * 275))
                 return 9;
-            else if (y >= 285 && y <= 300)
+            else if (y >= (int) ( 285 * fatorX ) && y <=  (int)( fatorX * 300))
                 return 10;
-            else if (y >= 311 && y <= 326)
+            else if (y >= (int) ( 311 * fatorX ) && y <=  (int)( fatorX * 326))
                 return 11;
-            else if (y >= 336 && y <= 351)
+            else if (y >= (int) ( 336 * fatorX ) && y <=  (int)( fatorX * 351))
                 return 12;
-            else if (y >= 362 && y <= 377)
+            else if (y >= (int) ( 362 * fatorX ) && y <=  (int)( fatorX * 377))
                 return 13;
-            else if (y >= 387 && y <= 402)
+            else if (y >= (int) ( 387 * fatorX ) && y <=  (int)( fatorX * 402))
                 return 14;
-            else if (y >= 413 && y <= 428)
+            else if (y >= (int) ( 413 * fatorX ) && y <=  (int)( fatorX * 428))
                 return 15;
-            else if (y >= 438 && y <= 453)
+            else if (y >= (int) ( 438 * fatorX ) && y <=  (int)( fatorX * 453))
                 return 16;
-            else if (y >= 464 && y <= 479)
+            else if (y >= (int) ( 464 * fatorX ) && y <=  (int)( fatorX * 479))
                 return 17;
 
             return -1;
